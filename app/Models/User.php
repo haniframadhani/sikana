@@ -23,7 +23,20 @@ class User extends Authenticatable implements FilamentUser
         'name',
         'email',
         'password',
-        'is_admin', // Pastikan ini ada di database
+        'is_admin',
+        'tanggal_lahir',
+        'alamat',
+        'wilayah',
+        'cabang',
+        'ranting',
+        'pendidikan_terakhir',
+        'sekolah_universitas',
+        'bidang_pekerjaan',
+        'prestasi',
+        'pelatihan_training',
+        'hobi',
+        'surat_rekomendasi',
+        'pasfoto',
     ];
 
     /**
@@ -54,6 +67,7 @@ class User extends Authenticatable implements FilamentUser
      */
     public function canAccessPanel(Panel $panel): bool
     {
-        return $this->hasAnyRole(['admin', 'anggota', 'pimpinan-pusat', 'pimpinan-wilayah']);
+        return true;
+        // return $this->hasAnyRole(['admin', 'anggota', 'pimpinan-pusat', 'pimpinan-wilayah']);
     }
 }
